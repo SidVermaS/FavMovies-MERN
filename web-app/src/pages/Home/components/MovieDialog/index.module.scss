@@ -1,0 +1,12 @@
+@import "../../../../utils/styles/index.scss";
+
+.background {
+  .buttonBackgroundClassName{ 
+    height: fit-content;
+    width: fit-content;
+    padding: 0.5rem 1rem;
+  }
+  .inputField {
+    margin-bottom: 1rem;
+  }
+}

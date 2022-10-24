@@ -1,0 +1,21 @@
+@import "../../utils/styles/index.scss";
+
+.background {
+  @extend .whVWVH;
+  @extend .dFlexCenter;
+  background: $colorGrey;
+
+  .card {
+    width: 35rem;
+    .cardBody {
+      text-align: center;
+      font-size: 1.5rem;
+      .authPageLink{
+           @extend .linkToPage;
+            margin-top: 1.7rem;}
+            .text {
+              font-size: 1.4rem;
+            }
+    }
+  }
+}

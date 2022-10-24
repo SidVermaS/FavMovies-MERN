@@ -1,0 +1,40 @@
+@import "./variables.scss";
+
+.borderRadius {
+  border-radius: 15rem;
+}
+.dFlex {
+  display: flex;
+}
+.dFlexDirectionCol {
+  @extend .dFlex;
+  flex-direction: column;
+}
+.dFlexDirectionRow {
+  @extend .dFlex;
+  flex-direction: row;
+}
+.dFlexCenter {
+  @extend .dFlex;
+  justify-content: center;
+  align-items: center;
+}
+.wh100Per {
+  width: 100%;
+  height: 100%;
+}
+.whVWVH {
+  width: 100vw;
+  height: 100vh;
+}
+
+.linkToPage {
+  cursor: pointer;
+  color: $colorBlue;
+  font-size: 1.4rem;
+  text-align: center;
+}
+.linearGradientBackground{
+
+  background: linear-gradient(to right, $colorBlue1, $colorBlue5);
+}

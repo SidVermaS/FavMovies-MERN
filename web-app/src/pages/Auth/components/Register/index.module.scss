@@ -1,0 +1,29 @@
+@import '../../../../utils/styles/index.scss';
+
+.background {
+    @extend .wh100Per;
+   @extend .dFlexDirectionCol;
+    justify-content: center;
+    .title {
+        font-size: 2rem;
+        font-weight: 600;
+        text-align: center;
+       margin-bottom: 2.5rem;
+    }
+    .content {
+        @extend .dFlexDirectionCol;
+        justify-content: center;
+        padding: 0 5rem;
+        .textFieldBackground {
+            margin-bottom: 2.5rem;
+        }
+      .confirmPasswordtextFieldBackground{
+        margin-bottom: 4rem;
+
+      }
+        .newAccount {
+            @extend .linkToPage;
+            margin-top: 1.7rem;
+        }
+    }
+}

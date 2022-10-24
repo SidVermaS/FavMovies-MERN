@@ -1,0 +1,26 @@
+@import '../../utils/styles/index.scss';
+
+.background {
+  @extend .dFlexCenter;
+    @extend .whVWVH;
+    background: $colorGrey;
+
+  .content {
+    width: 75vw;
+    height: 85vh;
+    // @extend .wh100Per;
+    @extend .dFlexDirectionRow;
+    .leftContent {
+     border-top-left-radius: $borderRadius;
+     border-bottom-left-radius: $borderRadius;
+      background-image: url("../../assets//images/login-page-background.jpeg");
+      flex: 1;
+      
+    }
+    .rightContent { border-top-right-radius: $borderRadius;
+        border-bottom-right-radius: $borderRadius;
+        background: $colorWhite;
+      flex: 1;
+    }
+  }
+}

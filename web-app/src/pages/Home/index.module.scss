@@ -1,0 +1,36 @@
+@import "../../utils/styles/index.scss";
+
+.background {
+  @extend .dFlexDirectionCol;
+
+  @extend .whVWVH;
+  padding: 5rem 5rem;
+  .th {
+    font-size: 1.5rem;
+  }
+  .td {
+    font-size: 1.5rem;
+    height: 1rem;
+    margin: 0;
+   
+  }
+  .actions {
+    @extend .dFlex;
+  }
+  .buttonBackgroundClassName {
+    width: fit-content;
+    height: fit-content;
+    padding: 0.5rem 1rem;
+    font-size: 1.4rem;
+    margin-bottom: 2.5rem;
+  }
+  .edit {
+    $editSize: 1.5rem;
+  height: $editSize;
+  width: $editSize;
+  margin-right: 0.5rem;
+  }
+  .delete {
+    cursor: pointer;
+  }
+}

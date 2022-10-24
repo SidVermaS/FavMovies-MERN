@@ -1,0 +1,21 @@
+@import "../../utils/styles/index.scss";
+
+.text {
+    color: $colorWhite !important;
+    font-size: 1.5rem;
+    text-decoration: none;
+    &:hover{
+        color: $colorWhite;
+    }
+}
+.background {
+    @extend .linearGradientBackground;
+    @extend .text;
+    padding: 1rem 2.5rem;
+    .brand {
+        color: $colorWhite;
+        font-size: 1.8rem;
+        font-weight: 500;
+
+    }
+}

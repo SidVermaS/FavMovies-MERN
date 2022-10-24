@@ -1,0 +1,31 @@
+@import "../../utils/styles/index.scss";
+
+.background {
+    .fontSize   {
+        font-size: 1.4rem;;
+    }
+  .label {
+    @extend .fontSize;
+    color: $colorGrey1;
+    margin-bottom: 0.5rem;
+
+  }
+  .noTopSideBorder {
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    outline: none;
+  }
+  .input {
+    @extend .noTopSideBorder;
+    @extend .fontSize;
+    width: 100%;
+    padding: 1rem 0.3rem;
+    &:active {
+      @extend .noTopSideBorder;
+    }
+    &:focus {
+      @extend .noTopSideBorder;
+    }
+  }
+}
