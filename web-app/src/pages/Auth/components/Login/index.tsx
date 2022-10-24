@@ -9,6 +9,7 @@ import { setUser } from "../../../../redux/reducers/user.reducer";
 import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
 import { PathE } from "../../../../utils/constants";
+import { setToast } from "../../../../redux/reducers/toast.reducer";
 const Login = ({ togglePage }: AuthComponentsI) => {
   const [cookie, setCookie, ] = useCookies(['token']);
   const [userLoginData, setUserLoginData] = React.useState<any>({
@@ -30,8 +31,8 @@ const Login = ({ togglePage }: AuthComponentsI) => {
       dispatch(setUser(data.user));
       setCookie('token',data.token)
       navigate(PathE.Home)
-    } else {
     }
+    dispatch(setToast({ title: "Sign in", message: data.message }));
   }, [userLoginData]);
   return (
     <div className={styles.background}>

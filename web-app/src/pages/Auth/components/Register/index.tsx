@@ -3,7 +3,7 @@ import React from "react";
 import Button from "../../../../components/Button";
 import TextField from "../../../../components/TextField";
 import { userregisterAPI } from "../../../../networks/authAPI";
-import {  AuthComponentsI } from "../../../../utils/interfaces";
+import { AuthComponentsI } from "../../../../utils/interfaces";
 import styles from "./index.module.scss";
 import { useDispatch } from "react-redux";
 import { setToast } from "../../../../redux/reducers/toast.reducer";
@@ -12,8 +12,9 @@ const Register = ({ togglePage }: AuthComponentsI) => {
     name: "",
     email: "",
     password: "",
+    confirm_password: "",
   });
-  const dispatch=useDispatch()
+  const dispatch = useDispatch();
   const handleChange = (e: any) => {
     setUserRegisterData((prev: any) => ({
       ...prev,
@@ -21,16 +22,18 @@ const Register = ({ togglePage }: AuthComponentsI) => {
     }));
   };
   const signUp = React.useCallback(async () => {
-    const { status, data } = await userregisterAPI(userRegisterData);
+    const { name, email, password } = userRegisterData;
+    const { status, data } = await userregisterAPI({ name, email, password });
     if (status === 201) {
       setUserRegisterData({
         name: "",
         email: "",
         password: "",
+        confirm_password: "",
       });
-    } 
+    }
 
-    dispatch(setToast({ title: 'Sign up',message: data.message }));
+    dispatch(setToast({ title: "Sign up", message: data.message }));
   }, [userRegisterData]);
   return (
     <div className={styles.background}>
@@ -76,7 +79,6 @@ const Register = ({ togglePage }: AuthComponentsI) => {
         <div onClick={togglePage} className={styles.newAccount}>
           Already have an account? Sign in
         </div>
-    
       </div>
     </div>
   );

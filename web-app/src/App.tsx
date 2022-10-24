@@ -4,7 +4,7 @@ import { securedRoutes, unsecuredRoutes } from "./routes";
 import { RouteI } from "./utils/interfaces";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { Cookies, useCookies } from "react-cookie";
+import { Cookies, } from "react-cookie";
 import { PathE } from "./utils/constants";
 import ToastBox from "./components/ToastBox";
 import NavigationBar from "./components/NavigationBar";
@@ -12,7 +12,7 @@ import NotFound from "./pages/NotFound";
 
 const App = () => {
 
-const cookies1=new Cookies()
+const cookies=new Cookies()
   const { user } = useSelector((state: any) => state.user);
   const { toast } = useSelector((state: any) => state.toast);
 
@@ -23,9 +23,9 @@ const cookies1=new Cookies()
       <ToastBox {...toast} />
 
       <BrowserRouter>
-        {user && cookies1.get('token') && <NavigationBar />}
+        {cookies.get('token') && <NavigationBar />}
         <Routes>
-          {cookies1.get('token')
+          {cookies.get('token')
             ? securedRoutes.map((routesItem: RouteI) => (
                 <Route
                   key={routesItem.path}
@@ -40,7 +40,7 @@ const cookies1=new Cookies()
                   element={<routesItem.element />}
                 />
               ))}
-          {user && cookies1.get('token') && (
+          {!cookies.get('token') && (
             <Route path="/" element={<Navigate replace to={PathE.Auth} />} />
           )}
           <Route path="*" element={<NotFound />} />
